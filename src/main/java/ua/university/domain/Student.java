@@ -2,6 +2,7 @@ package ua.university.domain;
 import ua.university.domain.enums.StudentStatus;
 import ua.university.domain.enums.StudyForm;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Student extends Person {
     private final String studentId;
@@ -41,17 +42,28 @@ public class Student extends Person {
     public void setStatus(StudentStatus status) {
         this.status = status;
     }
-
+    @Override
+    public boolean equals(Object o) {
+        if (!super.equals(o)) return false;
+        Student student = (Student) o;
+        return group == student.group &&
+                entryYear == student.entryYear&&
+                Objects.equals(studyForm, student.studyForm) &&
+                Objects.equals(status, student.status);
+    }
 
     @Override
     public String toString() {
-        return super.toString() +
+         return "Student{" +
                 ", studentId=" + studentId +
                 ", course=" + course +
                 ", group=" + group +
+                ", entryYear=" + entryYear +
+                ", studyForm=" + studyForm +
                 ", status=" + status;
     }
 }
+
 
 
     public void setStatus(StudentStatus status) {
