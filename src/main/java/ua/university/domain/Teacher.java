@@ -1,9 +1,7 @@
 package ua.university.domain;
-
 import java.time.LocalDate;
 
 public class Teacher extends Person {
-
     private String position;
     private String degree;
     private String academicTitle;
@@ -21,8 +19,19 @@ public class Teacher extends Person {
         this.hireDate = hireDate;
         this.workload = workload;
     }
-
     public String getPosition() {
         return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                ", position=" + position +
+                ", degree=" + degree +
+                ", title=" + academicTitle;
     }
 }
