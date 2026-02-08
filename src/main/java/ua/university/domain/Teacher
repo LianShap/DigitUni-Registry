@@ -1,0 +1,28 @@
+package ua.university.domain;
+
+import java.time.LocalDate;
+
+public class Teacher extends Person {
+
+    private String position;
+    private String degree;
+    private String academicTitle;
+    private LocalDate hireDate;
+    private double workload;
+
+    public Teacher(String id, String lastName, String firstName, String middleName,
+                   LocalDate birthDate, String email, String phone,
+                   String position, String degree, String academicTitle,
+                   LocalDate hireDate, double workload) {
+        super(id, lastName, firstName, middleName, birthDate, email, phone);
+        this.position = position;
+        this.degree = degree;
+        this.academicTitle = academicTitle;
+        this.hireDate = hireDate;
+        this.workload = workload;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+}
