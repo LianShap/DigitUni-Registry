@@ -1,7 +1,6 @@
 package ua.university.domain;
 import ua.university.domain.enums.StudentStatus;
 import ua.university.domain.enums.StudyForm;
-
 import java.time.LocalDate;
 
 public class Student extends Person {
@@ -30,22 +29,6 @@ public class Student extends Person {
         return studentId;
     }
 
-    public int getCourse() {
-        return course;
-    }
-
-    public String getGroup() {
-        return group;
-    }
-
-    public int getEntryYear() {
-        return entryYear;
-    }
-
-    public StudyForm getStudyForm() {
-        return studyForm;
-    }
-
     public StudentStatus getStatus() {
         return status;
     }                                                                                                                                           public void setCourse(int course) {
@@ -55,13 +38,21 @@ public class Student extends Person {
         this.course = course;
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    public void setStatus(StudentStatus status) {
+        this.status = status;
     }
 
-    public void setStudyForm(StudyForm studyForm) {
-        this.studyForm = studyForm;
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                ", studentId=" + studentId +
+                ", course=" + course +
+                ", group=" + group +
+                ", status=" + status;
     }
+}
+
 
     public void setStatus(StudentStatus status) {
         this.status = status;
