@@ -1,5 +1,6 @@
 package ua.university.domain;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Teacher extends Person {
     private String position;
@@ -26,12 +27,22 @@ public class Teacher extends Person {
     public void setPosition(String position) {
         this.position = position;
     }
-
+    @Override
+    public boolean equals(Object o) {
+        if (!super.equals(o)) return false;
+        Teacher teacher = (Teacher) o;
+        return Objects.equals(position, teacher.position) &&
+                Objects.equals(degree, teacher.degree) &&
+                Objects.equals(academicTitle, teacher.academicTitle);
+    }
     @Override
     public String toString() {
         return super.toString() +
                 ", position=" + position +
                 ", degree=" + degree +
-                ", title=" + academicTitle;
+                ", title=" + academicTitle +
+                ", hireDate=" + hireDate +
+                ", workload=" + workload;
     }
 }
+
