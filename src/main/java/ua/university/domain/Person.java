@@ -34,6 +34,9 @@ public abstract class Person {
         return lastName;
     }
 
+    public void setLastName(String s) {
+        this.lastName = lastName;
+    }
     public void setFullName(String fullName) {
         this.lastName = lastName;
     }
@@ -107,4 +110,5 @@ public abstract class Person {
                 ", phone='" + phone + '\'' +
                 '}';
     }
+
 }
