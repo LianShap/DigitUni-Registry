@@ -14,13 +14,13 @@ public class InputValidator {
 
     /**
      * Зчитує непорожній рядок з консолі.
-     * @param sc      scanner для читання вводу
-     * @param message повідомлення для користувача
+     * //@param message повідомлення для користувача
+     * @param sc scanner для читання вводу
      * @return непорожній рядок
      */
-    public static String readNonEmptyString(Scanner sc, String message) {
+    public static String readNonEmptyString(Scanner sc) {
         while (true) {
-            System.out.print(message);
+            //System.out.print(message);
             String input = sc.nextLine().trim();
 
             if (!input.isEmpty()) {
