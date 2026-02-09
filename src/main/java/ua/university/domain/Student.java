@@ -26,6 +26,14 @@ public class Student extends Person {
         this.status = status;
     }
 
+    public int getCourse() {
+        return course;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
     public String getStudentId() {
         return studentId;
     }
