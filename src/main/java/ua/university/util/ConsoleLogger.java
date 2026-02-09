@@ -11,4 +11,9 @@ public class ConsoleLogger implements ILogger{
                 System.out.println(s.getFullName() + " | курс " + s.getCourse())
         );
     }
+
+    @Override
+    public void info(String message) {
+        System.out.println(message);
+    }
 }
