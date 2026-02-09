@@ -54,19 +54,12 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-         return "Student{" +
+        return "Student{" +
                 ", studentId=" + studentId +
                 ", course=" + course +
                 ", group=" + group +
                 ", entryYear=" + entryYear +
                 ", studyForm=" + studyForm +
                 ", status=" + status;
-    }
-}
-
-
-
-    public void setStatus(StudentStatus status) {
-        this.status = status;
     }
 }
