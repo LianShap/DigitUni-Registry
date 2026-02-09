@@ -1,17 +1,23 @@
 package ua.university.repository.student;
 
-public class StudentRepository {
 import ua.university.domain.Student;
-import ua.university.repository.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-public class StudentRepository implements Repository<Student> {
-    private final List<Student> students = new ArrayList<>();
+/**
+ * Репозиторій для роботи зі студентами.
+ * <p>
+ * Визначає базові операції доступу до даних.
+ * </p>
+ */
+public interface StudentRepository {
 
-    @Override
-    public List<Student> findAll() {
-        return List.copyOf(students);
-    }
-    // TODO: expand repository with save/delete methods in next stage
+    List<Student> findAll();
+
+    Optional<Student> findById(String id);
+
+    void save(Student student);
+
+    void deleteById(String id);
+}
